@@ -1,0 +1,50 @@
+{
+    "name": "ticketember-fe",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev -p 3001",
+        "build": "next build",
+        "start": "next start",
+        "lint": "oxlint --type-aware src/",
+        "typecheck": "tsc --noEmit",
+        "format": "prettier --write .",
+        "prepare": "husky"
+    },
+    "dependencies": {
+        "@hookform/resolvers": "^7.0.9",
+        "@tanstack/react-query": "^5.108.4",
+        "clsx": "^2.1.1",
+        "dayjs": "^1.11.23",
+        "next": "16.4.6",
+        "qrcode.react": "^4.2.0",
+        "react": "^19.3.1",
+        "react-dom": "^19.3.1",
+        "react-hook-form": "^7.92.0",
+        "zod": "^4.6.7",
+        "zustand": "^5.1.0"
+    },
+    "devDependencies": {
+        "@types/node": "^22.20.5",
+        "@types/react": "^19",
+        "@types/react-dom": "^19",
+        "husky": "^9.1.7",
+        "lint-staged": "^17.6.2",
+        "oxlint": "^1.95.0",
+        "oxlint-tsgolint": "^7.0.2008",
+        "prettier": "^3.10.1",
+        "typescript": "^6.0.3"
+    },
+    "engines": {
+        "node": ">=22"
+    },
+    "lint-staged": {
+        "*.{ts,tsx,js,mjs}": [
+            "oxlint --fix",
+            "prettier --write"
+        ],
+        "*.{css,json,md,yml}": [
+            "prettier --write"
+        ]
+    }
+}
