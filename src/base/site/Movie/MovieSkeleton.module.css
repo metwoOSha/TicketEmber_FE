@@ -1,0 +1,23 @@
+.page {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 96px;
+    padding: 130px var(--page-padding) 0;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    max-width: 100%;
+}
+
+@media (max-width: 1000px) {
+    .page {
+        grid-template-columns: 1fr;
+    }
+
+    .poster {
+        display: none;
+    }
+}

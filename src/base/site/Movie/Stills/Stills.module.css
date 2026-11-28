@@ -1,0 +1,31 @@
+.section {
+    position: relative;
+    z-index: 3;
+    padding-top: 90px;
+}
+
+.head {
+    padding: 0 var(--page-padding) 28px;
+}
+
+.hint {
+    font-size: var(--text-small);
+    color: var(--color-text-muted);
+}
+
+.scroll {
+    display: flex;
+    gap: var(--space-4);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0 var(--page-padding) 18px;
+    scrollbar-width: thin;
+}
+
+.still {
+    flex: 0 0 min(620px, 85vw);
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-chip);
+    object-fit: cover;
+    scroll-snap-align: start;
+}

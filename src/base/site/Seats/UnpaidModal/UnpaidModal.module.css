@@ -1,0 +1,55 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    width: min(460px, 90vw);
+    padding: 36px;
+    border: 1px solid var(--color-warning);
+    border-radius: 8px;
+    background: var(--color-surface);
+}
+
+.eyebrow {
+    font-size: var(--text-label);
+    letter-spacing: 0.25em;
+    color: var(--color-warning);
+}
+
+.title {
+    margin-top: var(--space-3);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+.movie {
+    margin-top: var(--space-3);
+    color: var(--color-text-secondary);
+}
+
+.left {
+    margin-top: var(--space-4);
+    font-family: var(--font-heading);
+    font-size: 22px;
+    color: var(--color-warning);
+}
+
+.cta {
+    margin-top: var(--space-5);
+    justify-content: space-between;
+}
+
+.cancel {
+    margin-top: var(--space-4);
+    border: 0;
+    background: none;
+    font-size: var(--text-small);
+    color: var(--color-accent-label);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.cancel:disabled {
+    opacity: 0.5;
+}

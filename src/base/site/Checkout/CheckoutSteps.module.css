@@ -1,0 +1,37 @@
+.steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    padding-bottom: var(--space-7);
+    font-size: var(--text-small);
+    letter-spacing: 0.22em;
+}
+
+.done {
+    color: var(--color-accent-label);
+}
+
+.done:hover {
+    color: var(--color-text);
+}
+
+.step {
+    padding-bottom: 6px;
+    border-bottom: 1px solid transparent;
+    color: var(--color-text-muted);
+}
+
+.current {
+    color: var(--color-text);
+    border-color: var(--color-accent);
+}
+
+.line {
+    width: 64px;
+    border-top: 1px solid rgb(244 241 234 / 0.2);
+}
+
+.line:first-of-type {
+    border-color: rgb(185 176 255 / 0.5);
+}

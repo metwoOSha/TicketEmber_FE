@@ -1,0 +1,130 @@
+.row {
+    position: relative;
+    display: grid;
+    grid-template-columns: 120px 230px 130px 90px 1fr 170px 28px;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 0;
+    border-top: 1px solid rgb(244 241 234 / 0.1);
+    transition: background 0.6s;
+}
+
+a.row:hover {
+    background: linear-gradient(90deg, rgb(185 176 255 / 0.12), transparent 85%);
+}
+
+.disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.sold {
+    opacity: 0.45;
+}
+
+.started {
+    opacity: 0.4;
+    cursor: default;
+}
+
+.start {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1;
+}
+
+.format {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.lang {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+}
+
+.text {
+    font-size: 16px;
+}
+
+.plus {
+    margin-left: 3px;
+    font-size: var(--text-label);
+    color: var(--color-warning);
+}
+
+.from {
+    font-size: 12px;
+    color: var(--color-text-muted);
+}
+
+.seats {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding-right: 20px;
+}
+
+.bar {
+    display: block;
+    height: 3px;
+    border-radius: 2px;
+    background: rgb(244 241 234 / 0.14);
+}
+
+.fill {
+    display: block;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--color-accent);
+}
+
+.warn {
+    background: var(--color-warning);
+}
+
+.seatsText {
+    font-size: var(--text-small);
+    color: var(--color-text-secondary);
+}
+
+.warnText {
+    color: var(--color-warning);
+}
+
+.arrow {
+    display: inline-block;
+    font-size: 22px;
+    transition:
+        transform 0.6s var(--ease-out),
+        color 0.4s;
+}
+
+a.row:hover .arrow {
+    transform: translateX(10px);
+    color: var(--color-accent-label);
+}
+
+@media (max-width: 1000px) {
+    .row {
+        grid-template-columns: auto 1fr auto;
+        gap: var(--space-2) var(--space-4);
+    }
+
+    .row > :nth-child(3),
+    .row > :nth-child(4),
+    .row > :nth-child(7) {
+        display: none;
+    }
+
+    .start {
+        font-size: 32px;
+    }
+
+    .seats {
+        grid-column: 1 / -1;
+        padding-right: 0;
+    }
+}

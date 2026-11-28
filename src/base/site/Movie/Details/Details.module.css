@@ -1,0 +1,36 @@
+.section {
+    position: relative;
+    z-index: 3;
+    padding: 80px var(--page-padding) 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 56px;
+    margin-top: 28px;
+}
+
+.item {
+    padding: 20px 0;
+    border-top: 1px solid rgb(244 241 234 / 0.12);
+}
+
+.label {
+    margin-bottom: 6px;
+    font-size: var(--text-label);
+    letter-spacing: 0.22em;
+    color: var(--color-accent-label);
+}
+
+.value {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+@media (max-width: 800px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0 var(--space-5);
+    }
+}

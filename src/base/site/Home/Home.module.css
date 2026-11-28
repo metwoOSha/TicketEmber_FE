@@ -1,0 +1,67 @@
+.home {
+    position: relative;
+    height: 100vh;
+    min-height: 640px;
+}
+
+.row {
+    display: flex;
+    height: 100%;
+}
+
+/* Hovering the row dims every column; the hovered one grows and lights up */
+.row:hover > * {
+    filter: brightness(0.2) saturate(0.6);
+}
+
+.row > *:hover {
+    flex-grow: 2.6;
+    filter: none;
+}
+
+.state {
+    margin: auto;
+    color: var(--color-text-muted);
+}
+
+.bar {
+    position: absolute;
+    inset: auto 0 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-5);
+    padding: 26px var(--page-padding);
+    background: linear-gradient(to top, rgb(5 5 7 / 0.9), transparent);
+    pointer-events: none;
+}
+
+.bar > * {
+    pointer-events: auto;
+}
+
+.hint {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: var(--color-text-muted);
+}
+
+@media (max-width: 900px) {
+    .home {
+        height: auto;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .bar {
+        position: sticky;
+        bottom: 0;
+    }
+
+    .hint {
+        display: none;
+    }
+}

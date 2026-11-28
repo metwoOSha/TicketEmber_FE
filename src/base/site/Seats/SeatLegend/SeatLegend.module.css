@@ -1,0 +1,45 @@
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-4) var(--space-6);
+    margin-top: 26px;
+    font-size: var(--text-small);
+    color: var(--color-text-secondary);
+}
+
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: var(--space-2);
+    border-radius: 4px;
+    border: 1px solid var(--color-line);
+    background: var(--color-seat);
+    vertical-align: -2px;
+}
+
+.premium {
+    border-color: var(--color-warning);
+}
+
+.mine {
+    border-color: var(--color-accent);
+    background: var(--color-accent);
+}
+
+.taken {
+    border-color: var(--color-seat-taken-border);
+    background: var(--color-seat-taken);
+}
+
+.free {
+    margin-top: var(--space-3);
+    font-size: var(--text-small);
+    color: var(--color-text-secondary);
+    text-align: center;
+}
+
+.low {
+    color: var(--color-warning);
+}

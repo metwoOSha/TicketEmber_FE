@@ -1,0 +1,38 @@
+.zoom {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-top: 22px;
+}
+
+.btn {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-button);
+    background: transparent;
+    font-size: 18px;
+    line-height: 1;
+    transition: border-color 0.2s;
+}
+
+.btn:hover {
+    border-color: var(--color-accent-label);
+}
+
+.value {
+    width: 64px;
+    text-align: center;
+    font-size: var(--text-small);
+    color: var(--color-text-secondary);
+}
+
+.fit {
+    margin-left: 10px;
+    border: 0;
+    background: none;
+    font-size: var(--text-small);
+    color: var(--color-accent-label);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
