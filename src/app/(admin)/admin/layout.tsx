@@ -1,9 +1,6 @@
-import '@/styles/admin-tokens.css';
+import type { ReactNode } from 'react';
+import AdminLayout from '@/layout/AdminLayout/AdminLayout';
 
-export default function AdminLayout({ children }: { children: React.ReactNode }) {
-    return (
-        <div data-theme="admin" style={{ minHeight: '100vh' }}>
-            {children}
-        </div>
-    );
+export default function Layout({ children }: { children: ReactNode }) {
+    return <AdminLayout>{children}</AdminLayout>;
 }

@@ -1,0 +1,24 @@
+.bar {
+    display: block;
+    width: 120px;
+    height: 4px;
+    overflow: hidden;
+    border-radius: 2px;
+    background: color-mix(in srgb, var(--color-text) 14%, transparent);
+}
+
+.fill {
+    display: block;
+    height: 100%;
+    border-radius: 2px;
+    background: var(--color-accent);
+    transition: width 0.6s var(--ease-out);
+}
+
+.hot {
+    background: var(--color-warning);
+}
+
+.full {
+    background: var(--color-danger);
+}

@@ -1,0 +1,156 @@
+.showtime {
+    min-width: 300px;
+}
+
+.cols {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 20px;
+    align-items: start;
+}
+
+.main,
+.side {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 0;
+}
+
+.scan {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.scan > button {
+    margin-top: 29px;
+}
+
+.ticketField {
+    flex: 1;
+    min-width: 240px;
+}
+
+.ticketField input {
+    height: 48px;
+    font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+    font-size: 18px;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 28px;
+    border: 2px solid;
+    border-radius: var(--radius-card);
+}
+
+.ok {
+    border-color: color-mix(in srgb, var(--color-success) 60%, transparent);
+    background: color-mix(in srgb, var(--color-success) 7%, transparent);
+}
+
+.warn {
+    border-color: color-mix(in srgb, var(--color-warning) 60%, transparent);
+    background: color-mix(in srgb, var(--color-warning) 7%, transparent);
+}
+
+.bad {
+    border-color: color-mix(in srgb, var(--color-danger) 60%, transparent);
+    background: color-mix(in srgb, var(--color-danger) 7%, transparent);
+}
+
+.verdict {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.ok .verdict {
+    color: var(--color-success);
+}
+
+.warn .verdict {
+    color: var(--color-warning);
+}
+
+.bad .verdict {
+    color: var(--color-danger);
+}
+
+.facts {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 12px 16px;
+    margin: 0;
+}
+
+.facts dt {
+    color: var(--color-text-muted);
+}
+
+.facts dd {
+    margin: 0;
+}
+
+.seat {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.inside {
+    font-size: 15px;
+}
+
+.inside b {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-variant-numeric: tabular-nums;
+}
+
+.fullBar {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.muted {
+    font-size: 14px;
+    color: var(--color-text-muted);
+}
+
+.scans {
+    margin: 0;
+    padding: 4px 0;
+    list-style: none;
+}
+
+.scans li {
+    display: grid;
+    grid-template-columns: 48px 1fr auto;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 22px;
+}
+
+.code {
+    font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+    font-size: 14px;
+}
+
+@media (max-width: 1100px) {
+    .cols {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}

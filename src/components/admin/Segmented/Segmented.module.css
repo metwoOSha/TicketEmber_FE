@@ -1,0 +1,39 @@
+.seg {
+    display: inline-flex;
+    min-width: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 4px;
+    border: 1px solid var(--color-line);
+    border-radius: 22px;
+    background: var(--color-surface);
+}
+
+.option {
+    height: 36px;
+    padding: 0 16px;
+    border: 0;
+    border-radius: var(--radius-pill);
+    background: transparent;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.option:hover {
+    color: var(--color-text);
+    background: color-mix(in srgb, var(--color-text) 5%, transparent);
+}
+
+.on,
+.on:hover {
+    background: var(--color-text);
+    color: var(--color-page);
+}
+
+.count {
+    margin-left: 6px;
+    font-weight: 400;
+    opacity: 0.75;
+}

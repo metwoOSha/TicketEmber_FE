@@ -1,0 +1,140 @@
+.scroll {
+    overflow-x: auto;
+}
+
+.timeline {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 0 12px;
+    min-width: 1000px;
+    padding: 16px 20px 40px;
+}
+
+.ticks {
+    position: relative;
+    height: 22px;
+    font-size: 12px;
+    color: var(--color-text-muted);
+    font-variant-numeric: tabular-nums;
+}
+
+.ticks span {
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+.hallNames {
+    display: flex;
+    flex-direction: column;
+}
+
+.hallName {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 96px;
+    border-top: 1px solid var(--color-line);
+    font-weight: 500;
+}
+
+.muted {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-text-muted);
+}
+
+.tracks {
+    position: relative;
+}
+
+.gridLine {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-left: 1px solid var(--color-line);
+}
+
+.track {
+    position: relative;
+    height: 96px;
+    border-top: 1px solid var(--color-line);
+}
+
+.now {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+    border-left: 2px solid var(--color-danger);
+    pointer-events: none;
+}
+
+.nowLabel {
+    position: absolute;
+    bottom: -26px;
+    left: -32px;
+    padding: 1px 6px;
+    border-radius: var(--radius-chip);
+    background: var(--color-danger);
+    color: var(--color-page);
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* --tint is the movie colour; --cut is where the movie ends and cleaning starts */
+.block {
+    --bg: color-mix(in srgb, var(--tint) 28%, var(--color-surface));
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1px;
+    overflow: hidden;
+    padding: 0 8px;
+    border: 1px solid color-mix(in srgb, var(--tint) 70%, var(--color-surface));
+    border-radius: var(--radius-button);
+    color: var(--color-text);
+    background:
+        linear-gradient(90deg, var(--bg) var(--cut), transparent var(--cut)),
+        repeating-linear-gradient(135deg, var(--bg) 0 4px, var(--color-page) 4px 8px);
+    transition: transform 0.15s;
+}
+
+a.block:hover {
+    transform: translateY(-1px);
+    z-index: 2;
+}
+
+.past {
+    --bg: color-mix(in srgb, var(--color-text) 6%, var(--color-surface));
+    border-color: var(--color-line-strong);
+    color: var(--color-text-muted);
+}
+
+.draft {
+    --bg: color-mix(in srgb, var(--color-accent) 20%, var(--color-surface));
+    border: 1px dashed var(--color-accent);
+    z-index: 2;
+}
+
+.conflict {
+    --bg: color-mix(in srgb, var(--color-danger) 18%, var(--color-surface));
+    border-color: var(--color-danger);
+}
+
+.blockTitle {
+    overflow: hidden;
+    font-size: 13px;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.blockLine {
+    font-size: 12px;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,44 @@
+.stack {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 18px;
+    border-radius: var(--radius-card);
+    background: var(--color-text);
+    color: var(--color-page);
+    box-shadow: 0 12px 30px var(--color-shadow);
+    animation: rise 0.2s ease;
+}
+
+.dismiss {
+    margin-left: 8px;
+    border: 0;
+    background: none;
+    color: inherit;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .toast {
+        animation: none;
+    }
+}

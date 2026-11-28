@@ -1,0 +1,33 @@
+.days {
+    align-self: flex-start;
+}
+
+.loading {
+    padding: 22px;
+}
+
+.hint {
+    font-size: 13px;
+    color: var(--color-text-muted);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 22px;
+    scroll-margin-top: 24px;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+    gap: 16px;
+}
+
+.formActions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
+}

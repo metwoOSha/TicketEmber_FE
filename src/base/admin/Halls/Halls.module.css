@@ -1,0 +1,102 @@
+.cols {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+
+.list {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hall {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    width: 100%;
+    padding: 16px 18px;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-card);
+    background: var(--color-surface);
+    text-align: left;
+}
+
+.hall:hover {
+    border-color: var(--color-border);
+}
+
+.on,
+.on:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 20%, transparent);
+}
+
+.hallName {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.muted {
+    font-size: 14px;
+    color: var(--color-text-muted);
+}
+
+.strong {
+    color: var(--color-text);
+}
+
+.editor {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 22px;
+}
+
+.dims {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(140px, 100%), 1fr));
+    gap: 16px;
+}
+
+.map {
+    overflow-x: auto;
+    padding: 8px 0 4px;
+}
+
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.legend span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.actions .muted {
+    margin-right: auto;
+}
+
+@media (max-width: 1000px) {
+    .cols {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}

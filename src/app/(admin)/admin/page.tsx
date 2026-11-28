@@ -1,7 +1,8 @@
-export default function AdminHomePage() {
-    return (
-        <main style={{ padding: 'var(--adm-space-5)' }}>
-            <h1>Admin</h1>
-        </main>
-    );
+import type { Metadata } from 'next';
+import Dashboard from '@/base/admin/Dashboard/Dashboard';
+
+export const metadata: Metadata = { title: 'Admin dashboard' };
+
+export default function AdminDashboardPage() {
+    return <Dashboard />;
 }

@@ -1,0 +1,126 @@
+.wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    min-width: max-content;
+    margin: 0 auto;
+}
+
+.screen {
+    width: 70%;
+    height: 20px;
+    border-top: 3px solid var(--color-text);
+    border-radius: 50% / 100% 100% 0 0;
+    box-shadow: 0 -10px 40px rgb(150 140 255 / 0.45);
+}
+
+.screenLabel {
+    margin-bottom: 10px;
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    color: var(--color-text-muted);
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rowName {
+    width: 14px;
+    font-size: 12px;
+    text-align: center;
+    color: var(--color-text-muted);
+}
+
+.seats {
+    display: flex;
+    gap: 5px;
+}
+
+.seat {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 24px;
+    padding: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 7px 7px 4px 4px;
+    background: var(--color-seat);
+    color: var(--color-text-secondary);
+    font-size: 10px;
+}
+
+button.seat {
+    transition: transform 0.12s;
+}
+
+button.seat:hover {
+    transform: translateY(-1px);
+    border-color: var(--color-accent-label);
+}
+
+.aisle {
+    margin-right: 18px;
+}
+
+.premium {
+    border-color: var(--color-warning);
+    color: var(--color-warning);
+}
+
+.sofa {
+    width: 57px;
+    border-color: var(--color-warning);
+    color: var(--color-warning);
+    border-radius: 9px 9px 4px 4px;
+}
+
+.blocked {
+    border-style: dashed;
+    color: var(--color-text-muted);
+    background: repeating-linear-gradient(135deg, var(--color-line-strong) 0 3px, var(--color-surface) 3px 6px);
+}
+
+/* View mode: sale state on top of the seat kind */
+span.seat {
+    width: 22px;
+    height: 20px;
+}
+
+span.sofa {
+    width: 49px;
+}
+
+.sold {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.sold.premium,
+.sold.sofa {
+    border-top: 3px solid var(--color-warning);
+}
+
+.held {
+    background: color-mix(in srgb, var(--color-warning) 35%, transparent);
+    border-color: var(--color-warning);
+}
+
+.swatch {
+    width: 16px;
+    height: 14px;
+}
+
+.swatch.sofa {
+    width: 30px;
+}

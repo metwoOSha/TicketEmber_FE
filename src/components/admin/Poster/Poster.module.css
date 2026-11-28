@@ -1,0 +1,23 @@
+.small {
+    display: block;
+    flex: 0 0 36px;
+    width: 36px;
+    height: 52px;
+    border-radius: 4px;
+}
+
+.large {
+    display: flex;
+    align-items: flex-end;
+    aspect-ratio: 2 / 3;
+    padding: 16px;
+    border-radius: 6px;
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1;
+    color: #f4f1ea; /* always on the dark poster */
+}

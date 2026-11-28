@@ -1,0 +1,86 @@
+.cols {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 20px;
+    align-items: start;
+}
+
+.side {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 0;
+}
+
+.hint {
+    display: block;
+    font-size: 13px;
+    color: var(--color-text-muted);
+}
+
+.link {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-accent-label);
+}
+
+.map {
+    overflow-x: auto;
+    padding: 22px;
+}
+
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    padding: 0 22px 22px;
+    font-size: 14px;
+}
+
+.legend span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.prices {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 22px;
+}
+
+.pricesGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
+}
+
+.orders {
+    margin: 0;
+    padding: 4px 0;
+    list-style: none;
+}
+
+.orders li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 22px;
+}
+
+.code {
+    font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+    font-size: 14px;
+    color: var(--color-accent-label);
+}
+
+@media (max-width: 1100px) {
+    .cols {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
