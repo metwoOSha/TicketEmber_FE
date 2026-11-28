@@ -1,0 +1,20 @@
+.bars {
+    height: 72px;
+    opacity: 0.85;
+    background: repeating-linear-gradient(
+        90deg,
+        #f4f1ea 0 2px,
+        transparent 2px 5px,
+        #f4f1ea 5px 6px,
+        transparent 6px 10px,
+        #f4f1ea 10px 13px,
+        transparent 13px 16px
+    );
+}
+
+.code {
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    color: var(--color-text-secondary);
+}

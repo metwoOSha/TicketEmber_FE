@@ -1,0 +1,13 @@
+.chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    height: 26px;
+    padding: 0 10px;
+    border: 1px solid color-mix(in srgb, var(--color-text) 42%, transparent);
+    border-radius: var(--radius-chip);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--color-text);
+}

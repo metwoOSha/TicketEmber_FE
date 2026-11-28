@@ -1,4 +1,139 @@
-/* Reset and accessibility only. No theme here: themes live in tokens.css / admin-tokens.css. */
+/* ==========================================================================
+   Design tokens. Public site = default theme on :root (dark, cinematic).
+   Admin = same variable names, overridden in [data-theme='admin'] (light, plain),
+   so every shared component in components/ works in both without extra code.
+   ========================================================================== */
+:root {
+    color-scheme: dark;
+
+    /* Surfaces */
+    --color-page: #050507;
+    --color-surface: #14141c;
+    --color-seat: #1c1c27;
+    --color-seat-taken: #0d0d14;
+    --color-seat-taken-border: #22222e;
+    --color-line: #3a3a4a;
+
+    /* Text */
+    --color-text: #f4f1ea;
+    --color-text-secondary: #cfccd8;
+    --color-text-muted: #a09dae;
+    --color-text-disabled: #6e6b7b; /* decoration and disabled only */
+
+    /* Accent and status */
+    --color-accent: #8b7bff;
+    --color-accent-label: #b9b0ff;
+    --color-on-accent: #050507;
+    --color-success: #4ade80;
+    --color-warning: #ffc15a;
+    --color-danger: #f87171;
+
+    --focus-ring: var(--color-accent);
+
+    /* Fonts (--font-heading-face / --font-body-face are set by next/font in app/layout.tsx) */
+    --font-heading: var(--font-heading-face), system-ui, sans-serif;
+    --font-body: var(--font-body-face), system-ui, sans-serif;
+    --font-weight-body: 300;
+
+    /* Type scale (min 11px for caps labels, body >= 13px) */
+    --text-label: 11px;
+    --text-small: 13px;
+    --text-body: 15px;
+
+    /* Spacing */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+    --space-8: 64px;
+
+    /* Radii */
+    --radius-chip: 4px;
+    --radius-button: 6px;
+    --radius-seat: 5px;
+    --radius-pill: 999px;
+
+    /* Motion */
+    --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+    --duration-slow: 0.8s;
+}
+
+/* Admin (CRM). Same faces and accent family as the site, tuned for long reading:
+   regular weight, 15px body, content on raised panels. Dark by default, light via data-mode. */
+[data-theme='admin'] {
+    color-scheme: dark;
+
+    --color-page: #08080c;
+    --color-surface: #111118;
+    --color-field: #181821;
+    --color-modal: #14141c;
+    --color-line: #1e1e27;
+    --color-line-strong: #2a2a36;
+    --color-border: #6e6b7b; /* control borders, 3:1 on surfaces */
+    --color-seat: #1c1c27;
+
+    --color-text: #f4f1ea;
+    --color-text-secondary: #cfccd8;
+    --color-text-muted: #a09dae;
+
+    --color-accent: #8b7bff;
+    --color-accent-hover: #a497ff;
+    --color-accent-label: #b9b0ff;
+    --color-on-accent: #08080c;
+    --color-success: #4ade80;
+    --color-warning: #ffc15a;
+    --color-danger: #f87171;
+    --color-danger-hover: #fa8c8c;
+    --color-avatar: #2b2466;
+
+    --color-glow: rgb(95 70 200 / 0.16);
+    --color-overlay: rgb(5 5 7 / 0.72);
+    --color-shadow: rgb(0 0 0 / 0.55);
+
+    --font-weight-body: 400;
+    --text-body: 15px;
+    --radius-card: 10px;
+    --sidebar-width: 232px;
+
+    background: var(--color-page);
+    color: var(--color-text);
+}
+
+[data-theme='admin'][data-mode='light'] {
+    color-scheme: light;
+
+    --color-page: #f4f3f8;
+    --color-surface: #ffffff;
+    --color-field: #ffffff;
+    --color-modal: #ffffff;
+    --color-line: #e4e2ec;
+    --color-line-strong: #d4d1df;
+    --color-border: #8a879a;
+    --color-seat: #ffffff;
+
+    --color-text: #14131c;
+    --color-text-secondary: #3c3a4a;
+    --color-text-muted: #5f5c70;
+
+    --color-accent: #5b4cdb;
+    --color-accent-hover: #4a3bc8;
+    --color-accent-label: #4b3dc4;
+    --color-on-accent: #f4f3f8;
+    --color-success: #187040;
+    --color-warning: #8a5a00;
+    --color-danger: #b42318;
+    --color-danger-hover: #931c13;
+    --color-avatar: #e4e0ff;
+
+    --color-glow: rgb(139 123 255 / 0.12);
+    --color-overlay: rgb(20 19 28 / 0.45);
+    --color-shadow: rgb(20 19 28 / 0.16);
+}
+
+/* Reset, base typography and accessibility. */
 *,
 *::before,
 *::after {
@@ -11,6 +146,13 @@ html {
 
 body {
     margin: 0;
+    min-height: 100vh;
+    background: var(--color-page);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-weight: var(--font-weight-body);
+    font-size: var(--text-body);
+    line-height: 1.5;
 }
 
 h1,
@@ -47,7 +189,7 @@ svg {
 
 /* Focus ring: 2px accent, offset 2px (accent comes from the active theme). */
 :focus-visible {
-    outline: 2px solid var(--focus-ring, #8b7bff);
+    outline: 2px solid var(--focus-ring);
     outline-offset: 2px;
 }
 
@@ -60,4 +202,23 @@ svg {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+}
+
+/* Layout tokens */
+:root {
+    --page-padding: clamp(16px, 5vw, 64px);
+    --header-height: 112px;
+}
+
+/* Text for screen readers only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
 }

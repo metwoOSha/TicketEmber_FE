@@ -1,12 +1,21 @@
 'use client';
 
-export default function ErrorPage({ reset }: { error: Error & { digest?: string }; reset: () => void }) {
+import Link from 'next/link';
+import StatusTicket from '@/components/StatusTicket/StatusTicket';
+import StatusLayout from '@/layout/StatusLayout/StatusLayout';
+
+export default function ErrorPage({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
     return (
-        <main style={{ padding: 32 }}>
-            <h1>Something went wrong</h1>
-            <button type="button" onClick={reset}>
-                Try again
-            </button>
-        </main>
+        <StatusLayout>
+            <StatusTicket
+                danger
+                code="500"
+                title="Something went wrong"
+                text="It is our fault, not yours. Held seats stay held until their timer ends. Try again in a moment."
+                footer={`ERROR ID ${error.digest ?? 'UNKNOWN'}`}
+                action={{ label: 'Try again', onClick: reset }}
+                secondary={<Link href="/my-tickets">My tickets</Link>}
+            />
+        </StatusLayout>
     );
 }

@@ -1,0 +1,40 @@
+.stub {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    font-size: var(--text-label);
+    letter-spacing: 0.2em;
+    color: var(--color-text);
+    background: rgb(185 176 255 / 0.16);
+    border-radius: var(--radius-chip);
+    transition: background 0.7s;
+    mask-image: radial-gradient(circle 6px at 0 50%, transparent 98%, #000), radial-gradient(circle 6px at 100% 50%, transparent 98%, #000);
+    mask-composite: intersect;
+}
+
+.stub:hover {
+    background: rgb(185 176 255 / 0.28);
+}
+
+.a {
+    padding: 0 var(--space-4) 0 18px;
+}
+
+.perf {
+    align-self: stretch;
+    margin: var(--space-2) 0;
+    border-left: 1px dashed rgb(244 241 234 / 0.4);
+}
+
+.b {
+    padding: 0 18px 0 var(--space-4);
+    color: var(--color-accent-label);
+    transition:
+        color 0.7s,
+        transform 0.7s var(--ease-out);
+}
+
+.stub:hover .b {
+    color: var(--color-text);
+    transform: translateX(3px);
+}

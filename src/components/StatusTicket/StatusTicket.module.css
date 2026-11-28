@@ -1,0 +1,93 @@
+.wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    text-align: center;
+}
+
+.shadow {
+    filter: drop-shadow(0 30px 60px rgb(139 123 255 / 0.25));
+    animation: rise 0.8s var(--ease-out) both;
+}
+
+.ticket {
+    display: flex;
+    flex-direction: column;
+    width: 420px;
+    max-width: 90vw;
+    padding: 34px 0;
+    background: var(--color-surface);
+    mask-image:
+        radial-gradient(circle 16px at 0 50%, transparent 98%, #000), radial-gradient(circle 16px at 100% 50%, transparent 98%, #000);
+    mask-composite: intersect;
+}
+
+.admit {
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    color: var(--color-accent-label);
+}
+
+.danger {
+    color: var(--color-danger);
+}
+
+.code {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 120px;
+    letter-spacing: -0.05em;
+    line-height: 1;
+}
+
+.perf {
+    margin: 18px 28px 0;
+    border-top: 1px dashed rgb(244 241 234 / 0.3);
+}
+
+.footer {
+    margin-top: 14px;
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    color: var(--color-text-muted);
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 36px;
+    letter-spacing: -0.02em;
+    animation: rise 0.8s var(--ease-out) 0.2s both;
+}
+
+.text {
+    max-width: 460px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    animation: rise 0.8s var(--ease-out) 0.3s both;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-5);
+    animation: rise 0.8s var(--ease-out) 0.4s both;
+}
+
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .shadow,
+    .title,
+    .text,
+    .actions {
+        animation: none;
+    }
+}

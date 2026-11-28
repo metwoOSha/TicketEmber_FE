@@ -33,3 +33,21 @@ export function formatDay(date: Date | string) {
     const d = inCinema(date);
     return d.isSame(dayjs().tz(CINEMA_TZ), 'day') ? `Today · ${d.format('D MMM')}` : d.format('ddd D MMM');
 }
+
+/** 136 -> "2h 16m" */
+export function formatDuration(minutes: number) {
+    const h = Math.floor(minutes / 60);
+    const m = minutes % 60;
+    return [h && `${h}h`, m && `${m}m`].filter(Boolean).join(' ');
+}
+
+/** (800, 1200) -> "$8–$12", (800, 800) -> "$8" */
+export function formatPriceRange(fromCents: number, toCents: number) {
+    return fromCents === toCents ? formatMoney(fromCents) : `${formatMoney(fromCents)}–${formatMoney(toCents)}`;
+}
+
+/** "31,122,82" for use inside rgba(). Accepts "#rrggbb". */
+export function hexToRgbString(hex: string) {
+    const n = parseInt(hex.replace('#', ''), 16);
+    return `${(n >> 16) & 255},${(n >> 8) & 255},${n & 255}`;
+}

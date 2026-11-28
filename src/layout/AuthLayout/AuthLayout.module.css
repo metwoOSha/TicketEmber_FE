@@ -1,0 +1,123 @@
+.layout {
+    position: relative;
+    display: grid;
+    grid-template-columns: 56fr 44fr;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.poster {
+    position: relative;
+    overflow: hidden;
+}
+
+.columns {
+    position: absolute;
+    inset: -40px 0;
+    display: flex;
+    gap: 10px;
+}
+
+.col {
+    flex: 1;
+    animation: float 10s ease-in-out infinite;
+}
+
+/* Placeholder posters until real TMDB art is wired in */
+.col:nth-child(1) {
+    margin-top: -120px;
+    background:
+        radial-gradient(circle at 50% 28%, rgb(255 255 255 / 0.3), #8b7bff 28%, transparent 60%), linear-gradient(175deg, #2a2370, #07070a);
+}
+.col:nth-child(2) {
+    margin-top: 60px;
+    animation-delay: -3s;
+    background:
+        radial-gradient(circle at 50% 36%, rgb(255 255 255 / 0.3), #2bb3a3 28%, transparent 60%), linear-gradient(175deg, #0e3b3a, #07070a);
+}
+.col:nth-child(3) {
+    margin-top: -40px;
+    animation-delay: -6s;
+    background:
+        radial-gradient(circle at 50% 24%, rgb(255 255 255 / 0.3), #e08a2e 28%, transparent 60%), linear-gradient(175deg, #4a2208, #07070a);
+}
+.col:nth-child(4) {
+    margin-top: 100px;
+    animation-delay: -2s;
+    background:
+        radial-gradient(circle at 50% 32%, rgb(255 255 255 / 0.3), #c0406a 28%, transparent 60%), linear-gradient(175deg, #3a1024, #07070a);
+}
+
+.shade {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to top, rgb(5 5 7 / 0.96) 12%, rgb(5 5 7 / 0.35) 60%, rgb(5 5 7 / 0.5)),
+        linear-gradient(to right, transparent 70%, var(--color-page));
+}
+
+.hero {
+    position: absolute;
+    left: var(--page-padding);
+    right: var(--page-padding);
+    bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.eyebrow {
+    color: var(--color-accent-label);
+    letter-spacing: 0.3em;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: clamp(56px, 8.5vw, 124px);
+    line-height: 0.88;
+    letter-spacing: -0.045em;
+}
+
+.logo {
+    position: absolute;
+    left: var(--page-padding);
+    top: 40px;
+    z-index: 10;
+}
+
+.form {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 28px;
+    padding: 0 clamp(24px, 6vw, 80px);
+}
+
+@keyframes float {
+    0%,
+    100% {
+        translate: 0 0;
+    }
+    50% {
+        translate: 0 -12px;
+    }
+}
+
+@media (max-width: 900px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .poster {
+        display: none;
+    }
+
+    .form {
+        padding: 120px var(--page-padding) var(--space-7);
+    }
+}

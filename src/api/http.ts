@@ -36,3 +36,8 @@ export async function http<T>(path: string, { body, headers, ...init }: RequestO
 
     return data as T;
 }
+
+export const get = <T>(path: string) => http<T>(path);
+export const post = <T>(path: string, body?: unknown) => http<T>(path, { method: 'POST', body });
+export const patch = <T>(path: string, body?: unknown) => http<T>(path, { method: 'PATCH', body });
+export const del = <T>(path: string) => http<T>(path, { method: 'DELETE' });

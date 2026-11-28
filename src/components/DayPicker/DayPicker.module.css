@@ -1,0 +1,24 @@
+.days {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3) 28px;
+}
+
+.day {
+    padding: var(--space-1) 0;
+    border: 0;
+    background: none;
+    font-size: var(--text-small);
+    letter-spacing: 0.1em;
+    color: var(--color-text-secondary);
+    transition: color 0.25s;
+}
+
+.day:hover {
+    color: var(--color-text);
+}
+
+.active,
+.active:hover {
+    color: var(--color-accent);
+}

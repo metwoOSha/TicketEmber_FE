@@ -1,0 +1,3 @@
+.container {
+    padding: var(--header-height) var(--page-padding) var(--space-8);
+}

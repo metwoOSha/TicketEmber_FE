@@ -1,0 +1,77 @@
+.overlay {
+    position: fixed;
+    width: auto;
+    height: auto;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    border: 0;
+    color: inherit;
+    inset: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+    padding: 80px var(--page-padding) var(--space-6);
+    background: rgb(3 4 4 / 0.84);
+    backdrop-filter: blur(6px);
+    animation: fade 0.5s ease-out;
+}
+
+.backdrop {
+    position: absolute;
+    inset: 0;
+    border: 0;
+    background: none;
+    cursor: default;
+}
+
+.close {
+    z-index: 1;
+    position: absolute;
+    top: 40px;
+    right: var(--page-padding);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 0;
+    background: none;
+    color: var(--color-text-secondary);
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: var(--color-text);
+}
+
+.esc {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: var(--color-text-muted);
+}
+
+.content {
+    position: relative;
+    width: min(960px, 100%);
+    animation: pop 0.7s var(--ease-out);
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pop {
+    from {
+        opacity: 0;
+        transform: scale(0.94);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}

@@ -1,0 +1,41 @@
+/* Floats over the page (posters, backgrounds); pages that need space use PageContainer. */
+.header {
+    position: absolute;
+    inset: 0 0 auto;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 26px var(--page-padding) 90px;
+    background: linear-gradient(to bottom, rgb(5 5 7 / 0.94) 0%, rgb(5 5 7 / 0.7) 45%, transparent);
+    pointer-events: none;
+}
+
+.logo,
+.center,
+.account {
+    pointer-events: auto;
+}
+
+.center {
+    position: absolute;
+    left: 50%;
+    top: 26px;
+    height: 42px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav {
+    display: flex;
+    gap: var(--space-6);
+    font-size: 14px;
+}
+
+@media (max-width: 900px) {
+    .nav {
+        display: none;
+    }
+}

@@ -1,0 +1,26 @@
+.link {
+    position: relative;
+    color: var(--color-text-secondary);
+    transition: color 0.25s;
+}
+
+.link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 100%;
+    bottom: -6px;
+    height: 1px;
+    background: var(--color-accent);
+    transition: right 0.35s var(--ease-out);
+}
+
+.link:hover,
+.active {
+    color: var(--color-text);
+}
+
+.link:hover::after,
+.active::after {
+    right: 0;
+}

@@ -1,0 +1,99 @@
+/* Notches sit on the perforation line, 440px from the top */
+.card {
+    --perf: 440px;
+    position: relative;
+    width: 480px;
+    max-width: 100%;
+    height: 640px;
+    border-radius: 6px;
+    background: linear-gradient(165deg, #2b2466, #17143a 70%);
+    mask-image:
+        radial-gradient(circle 16px at 0 var(--perf), transparent 98%, #000),
+        radial-gradient(circle 16px at 100% var(--perf), transparent 98%, #000);
+    mask-composite: intersect;
+    animation: rise 1s var(--ease-out) both;
+}
+
+.muted {
+    background: linear-gradient(165deg, #2a2a35, #17171f 70%);
+    filter: grayscale(0.8);
+}
+
+.top {
+    position: absolute;
+    inset: 0 0 auto;
+    height: var(--perf);
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-6) 40px 40px;
+}
+
+.label {
+    font-size: var(--text-label);
+    letter-spacing: 0.25em;
+    color: var(--color-accent-label);
+}
+
+.title {
+    margin-top: 22px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 48px;
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+
+.day {
+    margin-top: var(--space-6);
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    color: var(--color-accent-label);
+}
+
+.time {
+    margin-top: 4px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 96px;
+    letter-spacing: -0.04em;
+    line-height: 1;
+}
+
+.seatsLabel {
+    margin-top: 26px;
+}
+
+.seats {
+    margin-top: 6px;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1;
+}
+
+.perf {
+    position: absolute;
+    inset: var(--perf) 28px auto;
+    border-top: 1px dashed rgb(244 241 234 / 0.35);
+}
+
+.bottom {
+    position: absolute;
+    inset: calc(var(--perf) + 46px) 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card {
+        animation: none;
+    }
+}
