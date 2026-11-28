@@ -3,7 +3,8 @@
     "plugins": ["typescript", "react", "nextjs", "jsx-a11y"],
     "rules": {
         "typescript/no-explicit-any": "off",
-        "typescript/no-floating-promises": "error"
+        "typescript/no-floating-promises": "error",
+        "nextjs/no-img-element": "off"
     },
     "env": {
         "browser": true,
